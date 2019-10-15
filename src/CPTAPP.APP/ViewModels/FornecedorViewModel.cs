@@ -19,6 +19,7 @@ namespace CPTAPP.App.ViewModels
         public string Documento { get; set; }
 
         [DisplayName("Tipo")]
+        [Required(ErrorMessage = "O campo {0} é obrigatório!")]
         public int TipoFornecedor { get; set; }
         public EnderecoViewModel Endereco { get; set; }
 

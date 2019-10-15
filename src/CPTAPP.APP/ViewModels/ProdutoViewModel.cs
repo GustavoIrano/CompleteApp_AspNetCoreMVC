@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CPTAPP.App.Extensions;
+using Microsoft.AspNetCore.Http;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -25,11 +25,14 @@ namespace CPTAPP.App.ViewModels
         [StringLength(1000, ErrorMessage = "O campo {0} não pode ter mais de 1000 caracteres!")]
         public string Descricao { get; set; }
 
+        [DisplayName("Imagem do Produto")]
         public IFormFile ImagemUpload { get; set; }
 
         public string Imagem { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório!")]
+
+        [Moeda]
         public decimal Valor { get; set; }
 
         [ScaffoldColumn(false)]
