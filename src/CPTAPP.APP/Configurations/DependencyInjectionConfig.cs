@@ -1,4 +1,6 @@
 ﻿using CPTAPP.Business.Interfaces;
+using CPTAPP.Business.Notifications;
+using CPTAPP.Business.Services;
 using CPTAPP.Data.Context;
 using CPTAPP.Data.Repository;
 using Microsoft.AspNetCore.Mvc.DataAnnotations;
@@ -15,6 +17,10 @@ namespace CPTAPP.App.Configurations
             services.AddScoped<IFornecedorRepository, FornecedorRepository>();
             services.AddScoped<IEnderecoRepository, EnderecoRepository>();
             services.AddSingleton<IValidationAttributeAdapterProvider, MoedaValidationAttributeAdapterProvider>();
+
+            services.AddScoped<INotificador, Notificador>();
+            services.AddScoped<IFornecedorService, FornecedorService>();
+            services.AddScoped<IProdutoService, ProdutoService>();
 
             return services;
         }
